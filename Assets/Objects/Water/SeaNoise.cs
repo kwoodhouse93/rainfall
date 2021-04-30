@@ -124,15 +124,17 @@ public class SeaNoise : MonoBehaviour
             // Again, choice of cosine is pretty arbitrary.
             //
             // I guess it might reduce weird effects if all our waves start with the same phase?
-            // In this case, It's also 1 at t=0, so if we forget to set a fadeOutDurFreq, we'll just
+            // In this case, it's also 1 at t=0, so if we forget to set a fadeOutDurFreq, we'll just
             // have volume = 1 all the time, which is nicer than it snapping to volume = 0.5 as soon
             // as we go past (1-fadeOutMaxDur).
             float envelopeMix = (Mathf.Cos(Time.time * fadeOutDurFreq) + 1) / 2f;
 
-            // Aaaand the final step, multiple our envelope by the envelope mix, and one last scale
-            // and transpose to make sure we never reduce the volume below fadeOutAmount.
+            // Aaaand the final step, multiply lerp between our envelope and 1 by the envelope mix
+            float modulated = Mathf.Lerp(1, envelope, envelopeMix);
+
+            // And one last scaling to make sure we never reduce the volume below fadeOutAmount.
             float minVol = 1 - fadeOutAmount;
-            float volume = (envelopeMix * envelope) * (1 - minVol) + minVol;
+            float volume = modulated * (1 - minVol) + minVol;
 
             // Debug.Log("playback01: " + playback01 + ", envelope: " + envelope + ", envelopeMix: " + envelopeMix + ", volume:" + volume);
             audioSource.volume = volume;
