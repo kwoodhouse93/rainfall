@@ -344,12 +344,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 194c3317f580c42189b103adea204241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  raindrop: {fileID: 6718746378071867901, guid: 2e2a4955643de423680d742de6fc94cd,
+    type: 3}
   spawnHeight: 10
   spawnCount: 6
   spawnRate: 1
   spawnRange: 9
-  raindrop: {fileID: 6718746378071867901, guid: 2e2a4955643de423680d742de6fc94cd,
-    type: 3}
+  spawnChance: 0.1
   wobbleFreq: 1
   wobbleAmount: 3
   wobbleRandomness: 0.1
@@ -693,8 +694,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1584510250}
   - component: {fileID: 1584510249}
-  - component: {fileID: 1584510251}
   - component: {fileID: 1584510248}
+  - component: {fileID: 1584510251}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -714,7 +715,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 8888783199583960737, guid: 82201d751e1ee442daef1afe7fc94a79,
     type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

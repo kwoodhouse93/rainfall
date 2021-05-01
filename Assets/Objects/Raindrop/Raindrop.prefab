@@ -313,6 +313,7 @@ MonoBehaviour:
   spawnOnDestroy: {fileID: 6893183737982034255, guid: 877c7addcd627422ebcefca90be5dc3e,
     type: 3}
   maxCollisionLife: 0.2
+  destructionChance: 0.1
 --- !u!50 &9192081756920499760
 Rigidbody2D:
   serializedVersion: 4
