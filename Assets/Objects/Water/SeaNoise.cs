@@ -46,7 +46,7 @@ public class SeaNoise : MonoBehaviour
 
         // We use sin of playback01 * pi, which forms an arc starting at 0 when playback01 is 0,
         // up to 1 when playback01 is 0.5, and back down to 1 when playback01 is 1.
-        // Scale and transpose to fit the min/max cutoff range we defined.
+        // Scale and translate to fit the min/max cutoff range we defined.
         //
         // The curve looks a bit like this (where t = playback01):
         //
